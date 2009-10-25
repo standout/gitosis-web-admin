@@ -1,0 +1,15 @@
+/** 
+ * Standard layout styles
+ * 
+ * @project   
+ * @author    masone (Christian Felder)
+ * @cssdoc    version 1.0-pre
+ * @site      www.masone.ch
+ * 
+ * @colordef  #dbdce0; light gray
+ */ 
+
+/* clearfix */
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: block; }
+* html .clearfix { height: 1%; }
