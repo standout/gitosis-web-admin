@@ -7,6 +7,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/public/.htaccess" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/fixtures/companies.yml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/lib/shoulda/test_unit.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/repositories/edit.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/lib/shoulda/action_controller/matchers/assign_to_matcher.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/lib/shoulda/action_controller/matchers/respond_with_content_type_matcher.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/session_maintenance.rb" afterPath="" />
@@ -41,6 +42,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/public/404.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/lib/paperclip.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/config/environments/test.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/crypto_providers/sha512.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/will_paginate/test/fixtures/topics.yml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/other/private_helpers_test.rb" afterPath="" />
@@ -79,7 +81,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/base.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/factory_girl/lib/factory_girl/proxy.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/shoulda_macros/paperclip.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/app/views/layouts/users.rhtml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/crypto_providers/sha1.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/acts_as_authentic_test/login_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/app/models/profile.rb" afterPath="" />
@@ -92,6 +93,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/factory_girl/spec/factory_girl/syntax/generate_spec.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/public/422.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/lib/shoulda/action_controller/matchers/route_matcher.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/application.yml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/session_test/callbacks_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/lib/paperclip/matchers/have_attached_file_matcher.rb" afterPath="" />
@@ -118,11 +120,13 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/app/views/users/new.rhtml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/lib/paperclip/iostream.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/will_paginate/test/fixtures/admin.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gitosis-web-admin.iml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/test_case/mock_request.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/libs/company.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/lib/paperclip/interpolations.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/will_paginate/CHANGELOG.rdoc" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/lib/shoulda/tasks/yaml_to_shoulda.rake" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tmp/gitosis.conf" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/session/params.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/login.rb" afterPath="" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/gitosis_config.rb" />
@@ -130,6 +134,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/test_helper.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/lib/paperclip/matchers/validate_attachment_content_type_matcher.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/acts_as_authentic_test/single_access_test.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/repository_test.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/factory_girl/lib/factory_girl/proxy/attributes_for.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/lib/shoulda/active_record.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/generators/paperclip/templates/paperclip_migration.rb.erb" afterPath="" />
@@ -171,6 +176,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/app/controllers/application_controller.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/lib/shoulda/tasks.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/crypto_provider_test/sha512_test.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/repositories_controller.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/db/migrate/011_create_treats.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/factory_girl/lib/factory_girl/proxy/stub.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/test_case.rb" afterPath="" />
@@ -181,6 +187,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/tasks/paperclip_tasks.rake" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/controller_adapters/abstract_adapter.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/log/.keep" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/Rakefile" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/session_test/password_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/factory_girl/lib/factory_girl/syntax/blueprint.rb" afterPath="" />
@@ -189,8 +196,10 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/fixtures/users.yml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/crypto_providers/bcrypt.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/db/migrate/20090513104502_create_cats.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/MIT-LICENSE" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/app/views/posts/new.rhtml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/acts_as_authentic_test/email_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/will_paginate/lib/will_paginate/named_scope.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/session_test/activation_test.rb" afterPath="" />
@@ -198,6 +207,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/test/geometry_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/session_test/unauthorized_record_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/VERSION.yml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.generators" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/session/id.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/factory_girl/spec/factory_girl/syntax/blueprint_spec.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/session_test/active_record_trickery_test.rb" afterPath="" />
@@ -206,12 +216,14 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/factory_girl/lib/factory_girl/attribute/static.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/config/initializers/shoulda.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/fixtures/users.yml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/scaffold.css" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/factory_girl/spec/factory_girl/attribute/association_spec.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/session_test/params_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/will_paginate/test/fixtures/reply.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/session/http_auth.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/test/attachment_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/matchers/controller/assign_to_matcher_test.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/repositories/show.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/matchers/active_record/validate_numericality_of_matcher_test.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/test.rb" afterPath="$PROJECT_DIR$/config/environments/test.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/session_test/http_auth_test.rb" afterPath="" />
@@ -231,6 +243,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/factory_girl/lib/factory_girl/proxy/create.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/LICENSE" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/app/views/users/edit.rhtml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/repository.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/factory_girl/spec/factory_girl/attribute/static_spec.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/session/persistence.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/will_paginate/test/helper.rb" afterPath="" />
@@ -247,6 +260,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/session/active_record_trickery.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/factory_girl/spec/spec.opts" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/acts_as_authentic_test/password_test.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/functional/repositories_controller_test.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/fixtures/employees.yml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/vendor/plugins/.keep" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/app/models/tagging.rb" afterPath="" />
@@ -257,6 +271,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/session_test/credentials_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/db/migrate/009_create_products.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/controller_adapters/merb_adapter.rb" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/app/views/layouts/users.rhtml" afterPath="$PROJECT_DIR$/app/views/layouts/repositories.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/will_paginate/lib/will_paginate/view_helpers.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/libs/affiliate.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/matchers/active_record/validate_format_of_matcher_test.rb" afterPath="" />
@@ -269,6 +284,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/matchers/active_record/have_db_column_matcher_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/libs/ldaper.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/test/fixtures/bad.png" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/db/migrate/010_create_friendships.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_helper.rb" afterPath="$PROJECT_DIR$/test/test_helper.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/README.rdoc" afterPath="" />
@@ -290,6 +306,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/app/models/flea.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/db/migrate/003_create_taggings.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/lib/shoulda/action_controller/matchers/render_with_layout_matcher.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/repositories_helper.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/lib/shoulda/action_controller/matchers/set_the_flash_matcher.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/generators/paperclip/paperclip_generator.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/will_paginate/examples/index.html" afterPath="" />
@@ -320,6 +337,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/crypto_providers/wordpress.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/shoulda.gemspec" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/app/models/friendship.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/repositories/index.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/perishable_token.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/will_paginate/test/fixtures/users.yml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/session/base.rb" afterPath="" />
@@ -352,6 +370,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/script/generate" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/magic_columns.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/other/context_test.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/db/migrate/006_create_addresses.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/lib/shoulda/action_view.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/session/unauthorized_record.rb" afterPath="" />
@@ -395,8 +414,12 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/matchers/active_record/have_readonly_attributes_matcher_test.rb" afterPath="" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/application.example.yml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/will_paginate/lib/will_paginate/core_ext.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/repositories/new.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/projectCodeStyle.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environment.rb" afterPath="$PROJECT_DIR$/config/environment.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/test/iostream_test.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/schema.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/factory_girl/lib/factory_girl/syntax/sham.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/factory_girl/spec/factory_girl/attribute/dynamic_spec.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/model_builder.rb" afterPath="" />
@@ -408,6 +431,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/random_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/rails_root/db/migrate/007_create_fleas.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/lib/authlogic/controller_adapters/rails_adapter.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/helpers/repositories_helper_test.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/session_test/klass_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/test/session_test/magic_states_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/matchers/active_record/have_db_index_matcher_test.rb" afterPath="" />
@@ -448,6 +472,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/lib/shoulda/assertions.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/test/unit/friendship_test.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/generators/paperclip/USAGE" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20091025074158_create_repositories.rb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/authlogic/rails/init.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/shoulda/lib/shoulda/action_mailer.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/plugins/paperclip/test/upfile_test.rb" afterPath="" />
@@ -516,7 +541,7 @@
       <file leaf-file-name="repository_test.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/unit/repository_test.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="2" selection-start="203" selection-end="203" vertical-scroll-proportion="0.19749217">
+            <state line="6" column="2" selection-start="203" selection-end="203" vertical-scroll-proportion="0.30958232">
               <folding />
             </state>
           </provider>
@@ -911,14 +936,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="25" width="1156" height="804" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Web Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32892805" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.66079295" order="0" side_tool="false" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
@@ -1064,7 +1089,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/repository_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="2" selection-start="203" selection-end="203" vertical-scroll-proportion="0.19749217">
+        <state line="6" column="2" selection-start="203" selection-end="203" vertical-scroll-proportion="0.30958232">
           <folding />
         </state>
       </provider>
