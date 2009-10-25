@@ -36,3 +36,15 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+
+def create_test_gitosis_config
+  # create test config file
+  @config_file ||= File.join(configatron.gitosis_admin_root, configatron.gitosis_config)
+  File.new(@config_file, 'w')
+end
+
+def delete_test_gitosis_config
+  # delete test config file
+  File.delete(@config_file)
+end

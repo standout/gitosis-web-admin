@@ -1,0 +1,20 @@
+<h1>Editing repository</h1>
+
+<% form_for(@repository) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @repository %> |
+<%= link_to 'Back', repositories_path %>

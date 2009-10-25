@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @repository.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @repository.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_repository_path(@repository) %> |
+<%= link_to 'Back', repositories_path %>

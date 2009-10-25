@@ -1,0 +1,20 @@
+# Settings that are the same for each environment
+global: &global
+
+
+# Environment specific variables.
+# Just override global settings as needed.
+development:
+  <<: *global
+
+
+staging:
+  <<: *global
+
+
+test:
+  <<: *global
+
+
+production:
+  <<: *global
