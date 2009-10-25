@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :public_keys
+
   map.resources :repositories
 
   # The priority is based upon order of creation: first created -> highest priority.

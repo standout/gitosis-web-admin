@@ -1,16 +1,9 @@
 <h1>Editing repository</h1>
 
 <% form_for(@repository) do |f| %>
-  <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  
   <p>
     <%= f.submit 'Update' %>
   </p>

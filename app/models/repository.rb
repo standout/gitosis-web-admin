@@ -7,7 +7,7 @@ class Repository < ActiveRecord::Base
   validates_format_of :email, :with => %r{^(?:[_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-zA-Z0-9\-\.]+)*(\.[a-z]{2,4})$}i 
 
   before_save :save_config
-  # TODO: after_destroy
+  after_destroy :remove_from_config
 
   def to_param
     self.name  
@@ -30,6 +30,12 @@ private
       @config.add_to_group(self.name, 'writable', self.name)
       @config.save
     end
+  end
+
+  def remove_from_config
+    @config ||= GitosisConfig.new
+    @config.remove_group(self.name)
+    @config.save
   end
 
 end

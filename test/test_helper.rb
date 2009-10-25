@@ -32,19 +32,21 @@ class ActiveSupport::TestCase
   #
   # Note: You'll currently still have to declare fixtures explicitly in integration tests
   # -- they do not yet inherit this setting
-  fixtures :all
+  # fixtures :all
 
   # Add more helper methods to be used by all tests here...
 end
 
+def gitosis_test_config
+  @config_file ||= File.join(configatron.gitosis_admin_root, configatron.gitosis_config)
+end
 
 def create_test_gitosis_config
   # create test config file
-  @config_file ||= File.join(configatron.gitosis_admin_root, configatron.gitosis_config)
-  File.new(@config_file, 'w')
+  File.new(gitosis_test_config, 'w')
 end
 
 def delete_test_gitosis_config
   # delete test config file
-  File.delete(@config_file)
+  File.delete(gitosis_test_config)
 end

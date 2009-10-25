@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091025074158) do
+ActiveRecord::Schema.define(:version => 20091025112742) do
+
+  create_table "public_keys", :force => true do |t|
+    t.string   "description"
+    t.string   "email"
+    t.text     "source"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "repositories", :force => true do |t|
     t.string   "name"
