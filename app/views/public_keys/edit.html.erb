@@ -1,0 +1,13 @@
+<h1>Editing public_key</h1>
+
+<% form_for(@public_key) do |f| %>
+
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @public_key %> |
+<%= link_to 'Back', public_keys_path %>

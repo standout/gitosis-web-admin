@@ -2,8 +2,8 @@ Work in progress.
 http://www.masone.ch
 
 
-Advanced features (planned)
-* Implement destroy
+Advanced features (todo)
+* Store public key reference in gitosis config
 * Send mail notification to repository owner if anything related changes
 * Send mail to key owner if anything related changes
 * Lock config file while editing

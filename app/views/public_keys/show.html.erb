@@ -1,0 +1,13 @@
+<p>
+  <b>Description:</b>
+  <%=h @public_key.description %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @public_key.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_public_key_path(@public_key) %> |
+<%= link_to 'Back', public_keys_path %>
