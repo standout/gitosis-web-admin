@@ -1,6 +1,7 @@
-<h1>New public_key</h1>
+<h1>New public key</h1>
 
-<% form_for(@public_key) do |f| %>
+<h2>Create</h2>
+<% form_for([@repository, @public_key]) do |f| %>
 
   <%= render :partial => 'form', :locals => { :f => f } %>
   
@@ -9,4 +10,18 @@
   </p>
 <% end %>
 
-<%= link_to 'Back', public_keys_path %>
+<% if @repository %>
+  <h2>Add existing</h2>
+  <% form_tag(add_public_key_repository_path(@repository), :method => :put) do %>
+
+    <p>
+      <%= select_tag :public_key_id, public_keys_for_select %>
+    </p>
+
+    <p>
+      <%= submit_tag 'Add' %>
+    </p>
+  <% end %>
+
+  <%= link_to 'Back', @repository %>
+<% end %>

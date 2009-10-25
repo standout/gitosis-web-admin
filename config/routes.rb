@@ -1,7 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :public_keys
 
-  map.resources :repositories
+  map.root :controller => 'repositories'
+  map.resources :public_keys
+  map.resources :repositories, :member => { :add_public_key => :put, :remove_public_key => :put } do |repository|
+    repository.resources :public_keys, :only => [:new, :create]
+  end
+
+  # repositories/1/add_key?public_key_id=2
 
   # The priority is based upon order of creation: first created -> highest priority.
 

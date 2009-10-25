@@ -11,6 +11,9 @@ class RepositoriesControllerTest < ActionController::TestCase
     delete_test_gitosis_config
   end
 
+  should "test remove_key"
+  should "test add_key"
+
   should "get index" do
     get :index
     assert_response :success

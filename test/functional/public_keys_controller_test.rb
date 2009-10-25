@@ -6,6 +6,8 @@ class PublicKeysControllerTest < ActionController::TestCase
     @public_key ||= Factory(:public_key)
   end
 
+  should "test create with and withoud @repository"
+
   test "should get index" do
     get :index
     assert_response :success

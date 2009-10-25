@@ -2,7 +2,10 @@ require 'test_helper'
 
 class RepositoryTest < ActiveSupport::TestCase
 
-  context "validateion" do
+  should_have_many :permissions
+  should_have_many :public_keys
+
+  context "validation" do
 
     setup do
       create_test_gitosis_config

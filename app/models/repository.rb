@@ -2,6 +2,9 @@ require 'gitosis_config'
 
 class Repository < ActiveRecord::Base
 
+  has_many :public_keys, :through => :permissions
+  has_many :permissions
+
   validates_uniqueness_of :name
   validates_format_of :name, :with => %r{^[a-z]+[0-9a-z_]+$} # repository name may only contain lowercase letters, numbers and underscores
   validates_format_of :email, :with => %r{^(?:[_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-zA-Z0-9\-\.]+)*(\.[a-z]{2,4})$}i 
@@ -9,8 +12,8 @@ class Repository < ActiveRecord::Base
   before_save :save_config
   after_destroy :remove_from_config
 
-  def to_param
-    self.name  
+  def remote_git_repository_url
+    configatron.remote_git_repository+":#{self.name}.git"
   end
 
 private

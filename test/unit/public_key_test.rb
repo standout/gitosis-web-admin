@@ -2,6 +2,9 @@ require 'test_helper'
 
 class PublicKeyTest < ActiveSupport::TestCase
 
+  should_have_many :permissions
+  should_have_many :repositories
+
   context "validateion" do
 
     should_validate_presence_of :description, :source

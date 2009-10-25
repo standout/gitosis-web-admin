@@ -1,13 +1,35 @@
+<h1>Repository: <%=h @repository.name %></h1>
+
 <p>
-  <b>Name:</b>
-  <%=h @repository.name %>
+  <b>URL:</b><br />
+  <%= h @repository.remote_git_repository_url %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b>E-Mail of the responsible person:</b><br />
   <%=h @repository.email %>
 </p>
 
+<%= link_to 'Add public key', new_repository_public_key_url(@repository) %>
 
+<% unless @public_keys.blank? %>
+  <h2>Public keys with access to this repository</h2>
+  <ul>
+    <% @public_keys.each do |pk| %>
+      <li>
+        <% form_tag remove_public_key_repository_path(@repository), :method => :put do %>
+          <p>
+            <%= link_to h(pk.label), pk %>
+            <%= hidden_field_tag :public_key_id, pk.id %> 
+            <%= submit_tag 'remove' %>
+          </p>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<br /><br />
 <%= link_to 'Edit', edit_repository_path(@repository) %> |
-<%= link_to 'Back', repositories_path %>
+<%= link_to 'Back', repositories_path %> |
+<%= link_to 'Destroy', @repository, :confirm => 'Are you sure?', :method => :delete %>

@@ -1,22 +1,13 @@
-<h1>Listing repositories</h1>
+<h1>Repositories</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-  </tr>
+<%= link_to 'Create new repository', new_repository_path %>
 
-<% @repositories.each do |repository| %>
-  <tr>
-    <td><%=h repository.name %></td>
-    <td><%=h repository.email %></td>
-    <td><%= link_to 'Show', repository %></td>
-    <td><%= link_to 'Edit', edit_repository_path(repository) %></td>
-    <td><%= link_to 'Destroy', repository, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% unless @repositories.blank? %>
+  <ul>
+  <% @repositories.each do |repository| %>
+    <li>
+      <%= link_to h(repository.name), repository %>
+    </li>
+  <% end %>
+  </ul>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New repository', new_repository_path %>
