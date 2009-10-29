@@ -3,10 +3,9 @@ require 'test_helper'
 class PublicKeysControllerTest < ActionController::TestCase
 
   def setup
+    create_test_gitosis_config
     @public_key ||= Factory(:public_key)
   end
-
-  should "test create with and withoud @repository"
 
   test "should get index" do
     get :index
@@ -25,6 +24,17 @@ class PublicKeysControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to public_key_path(assigns(:public_key))
+  end
+
+  test "should create public_key for given repository" do
+    create_test_gitosis_config
+    @repository = Factory(:repository)
+    assert_difference('@repository.public_keys.count') do
+      post :create, :public_key => Factory.attributes_for(:public_key), :repository_id => @repository.to_param
+    end
+
+    assert_redirected_to repository_path(assigns(:repository))
+    delete_test_gitosis_config
   end
 
   test "should show public_key" do
@@ -49,4 +59,5 @@ class PublicKeysControllerTest < ActionController::TestCase
 
     assert_redirected_to public_keys_path
   end
+ 
 end

@@ -1,32 +1,35 @@
 <h1>Public Key</h1>
 
-<p>
-  <b>Description:</b><br />
-  <%=h @public_key.description %>
-</p>
+<div class="main_col">
+  <p>
+    <b>Description:</b><br />
+    <%=h @public_key.description %>
+  </p>
 
-<p>
-  <b>Key Owner:</b><br />
-  <%=h @public_key.email %>
-</p>
+  <p>
+    <b>Key Owner:</b><br />
+    <%=h @public_key.email %>
+  </p>
 
-<p>
-  <b>Key:</b><br />
-  <%=h @public_key.source %>
-</p>
+  <p>
+    <b>Key:</b><br />
+    <%=h @public_key.source %>
+  </p>
 
-<% unless @repositories.blank? %>
-  <h2>Repositories this key has access to</h2>
-  <ul>
-    <% @repositories.each do |r| %>
-      <li>
-        <%= link_to h(r.name), r %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+  <% unless @repositories.blank? %>
+    <h2>Repositories this key has access to</h2>
+    <ul>
+      <% @repositories.each do |r| %>
+        <li>
+          <%= link_to h(r.name), r %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
 
-
-<%= link_to 'Edit', edit_public_key_path(@public_key) %> |
-<%= link_to 'Back', public_keys_path %> |
-<%= link_to 'Destroy', @public_key, :confirm => 'Are you sure?', :method => :delete %>
+<div class="main_col">
+  <%= link_to 'Back', public_keys_path %> |
+  <%= link_to 'Edit', edit_public_key_path(@public_key) %> |
+  <%= link_to 'Destroy', @public_key, :confirm => 'Are you sure?', :method => :delete %>
+</div>

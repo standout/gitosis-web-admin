@@ -11,9 +11,6 @@ class RepositoriesControllerTest < ActionController::TestCase
     delete_test_gitosis_config
   end
 
-  should "test remove_key"
-  should "test add_key"
-
   should "get index" do
     get :index
     assert_response :success
@@ -54,4 +51,31 @@ class RepositoriesControllerTest < ActionController::TestCase
 
     assert_redirected_to repositories_path
   end
+
+  context "key handling" do
+
+
+    should "remove key from repository" do
+      permission = Factory(:permission)
+      repository = permission.repository
+      public_key = permission.public_key
+
+      assert_difference('repository.public_keys.count', -1) do
+        put :remove_public_key, :id => repository.to_param, :public_key_id => public_key.to_param
+      end
+
+      assert_redirected_to repository_path(repository)
+    end
+
+    should "add key to repository" do
+      public_key = Factory(:public_key)
+
+      assert_difference('@repository.public_keys.count', +1) do
+        put :add_public_key, :id => @repository.to_param, :public_key_id => public_key.to_param
+      end
+
+      assert_redirected_to repository_path(@repository)
+    end
+  end
+
 end

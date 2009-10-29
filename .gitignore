@@ -6,3 +6,5 @@ config/application.yml
 config/database.yml
 db/*.sqlite3
 db/schema.rb
+public/keydir
+public/gitosis.conf

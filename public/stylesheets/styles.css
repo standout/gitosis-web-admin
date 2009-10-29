@@ -4,12 +4,80 @@
  * @project   
  * @author    masone (Christian Felder)
  * @cssdoc    version 1.0-pre
- * @site      www.masone.ch
- * 
- * @colordef  #dbdce0; light gray
+ *
+ * @colordef  #8FBE00; namics green
+ * @colordef  #381942; namics violet
  */ 
 
 /* clearfix */
 .clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
 .clearfix { display: block; }
 * html .clearfix { height: 1%; }
+
+html, body{
+  font-family: Helvetica, Arial, Verdana;
+  font-size:14px;
+  padding:0;
+  color:#555;
+  line-height:1.5em;
+}
+a{
+  color:#8FBE00;
+  border-bottom:1px dotted #8FBE00;
+  text-decoration:none;
+}
+a:hover{
+  color:#666;
+}
+a.button{
+  background:#8FBE00;
+  color:#FFF;
+  padding:0.5em 0.75em;
+}
+a.button:hover{
+  background:#ddd;
+  color:#333;
+}
+h1{ font-weight:bold; font-size:18px; color:#222; margin-bottom:0.8em; }
+h2{ font-weight:bold; font-size:16px; color:#222; margin-bottom:0.5em; }
+h2{ font-weight:bold; color:#222; }
+#header{
+  background:#381942;
+  padding:0.5em 1em;
+}
+#header h1{
+  color:#FFF;
+  float:left;
+  margin-right:1em;
+}
+#navigation a{
+  border-color:#FFF;
+  color:#FFF;
+}
+#navigation a:hover{
+  color:#ddd;
+}
+#navigation{
+  
+}
+#navigation li {
+  display:inline;
+  margin-right:1em;
+}
+#content{
+  padding:2em 1em;
+}
+.main_col,
+.side_col{
+
+}
+.main_col{ float:left; width:30em; margin-right:1.5em;}
+.side_col{ float:left; width:20em; }
+#content ul{
+  list-style-type:disc;
+  padding-left:1.2em;
+  margin-bottom:1.2em;
+}
+#content p{
+  margin-bottom:1.2em;
+}

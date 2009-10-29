@@ -1,27 +1,36 @@
-<h1>New public key</h1>
-
-<h2>Create</h2>
-<% form_for([@repository, @public_key]) do |f| %>
-
-  <%= render :partial => 'form', :locals => { :f => f } %>
-  
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+<% if @repository %>
+  <h1>New public key for <% h @repository.name %></h1>
+<% else %>
+  <h1>New public key</h1>
 <% end %>
 
-<% if @repository %>
-  <h2>Add existing</h2>
-  <% form_tag(add_public_key_repository_path(@repository), :method => :put) do %>
+<div class="main_col">
 
-    <p>
-      <%= select_tag :public_key_id, public_keys_for_select %>
-    </p>
+  <% if @repository %>
+    <h2>Add existing</h2>
+    <% form_tag(add_public_key_repository_path(@repository), :method => :put) do %>
 
-    <p>
-      <%= submit_tag 'Add' %>
-    </p>
+      <p>
+        <%= select_tag :public_key_id, public_keys_for_select %>
+      </p>
+
+      <p>
+        <%= submit_tag 'Add' %>
+      </p>
+    <% end %>
   <% end %>
 
+  <h2>Create</h2>
+  <% form_for([@repository, @public_key]) do |f| %>
+
+    <%= render :partial => 'form', :locals => { :f => f } %>
+
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+  <% end %>
+</div>
+
+<div class="side_col">
   <%= link_to 'Back', @repository %>
-<% end %>
+</div>

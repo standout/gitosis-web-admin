@@ -16,17 +16,24 @@ class Repository < ActiveRecord::Base
     configatron.remote_git_repository+":#{self.name}.git"
   end
 
+  def public_key_filenames
+    self.public_keys.collect(&:keyfilename).join(' ')
+  end
+
 private
 
   def save_config
     if self.new_record?
       # add new group
+      logger.info("Adding new repository #{self.name}")
       @config ||= GitosisConfig.new
       @config.add_group(self.name)
       @config.add_to_group(self.name, 'writable', self.name)
       @config.save
     elsif self.name_changed?
       # rename group (delete old, add new)
+      logger.info("Removing repository #{self.name_was}")
+      logger.info("Adding new repository #{self.name}")
       @config ||= GitosisConfig.new
       @config.remove_group(self.name_was)
       @config.add_group(self.name)
@@ -36,6 +43,7 @@ private
   end
 
   def remove_from_config
+    logger.info("Removing repository #{self.name}")
     @config ||= GitosisConfig.new
     @config.remove_group(self.name)
     @config.save

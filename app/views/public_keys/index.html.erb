@@ -1,13 +1,17 @@
 <h1>Public keys</h1>
 
-<%= link_to 'Add new public_key', new_public_key_path %>
-
-<% unless @public_keys.blank? %>
-  <ul>
-  <% @public_keys.each do |public_key| %>
-    <li>
-      <%= link_to h(public_key.label), public_key %>
-    </li>
+<div class="main_col">
+  <% unless @public_keys.blank? %>
+    <ul>
+    <% @public_keys.each do |public_key| %>
+      <li>
+        <%= link_to h(public_key.label), public_key %>
+      </li>
+    <% end %>
+    </ul>
   <% end %>
-  </ul>
-<% end %>  
+</div>
+
+<div class="side_col">
+  <p><%= link_to '+ Add new public_key', new_public_key_path, :class => 'button' %></p>
+</div>

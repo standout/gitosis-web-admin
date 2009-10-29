@@ -3,10 +3,8 @@ http://www.masone.ch
 
 
 Todo
-* Store public key reference in gitosis config
-* Navigation
-* Unique public key
 * Git integration
+* Cleaning up on destroy (files and dependent destroy)
 
 Advanced features (planned)
 * Send mail notification to repository owner if anything related changes

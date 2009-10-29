@@ -1,8 +1,7 @@
 <h1>Repositories</h1>
 
-<%= link_to 'Create new repository', new_repository_path %>
-
-<% unless @repositories.blank? %>
+<div class="main_col">
+  <% unless @repositories.blank? %>
   <ul>
   <% @repositories.each do |repository| %>
     <li>
@@ -10,4 +9,11 @@
     </li>
   <% end %>
   </ul>
-<% end %>
+  <% end %>
+</div>
+
+<div class="side_col">
+  <p>
+    <%= link_to '+ Create new repository', new_repository_path, :class => 'button' %>
+  </p>
+</div>

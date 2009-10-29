@@ -29,6 +29,30 @@ class GitosisConfig < ParseConfig
     file = open(@configuration_file, 'w')
     self.write(file)
     file.close
-  end 
+  end
 
+  def write(output_stream=STDOUT)
+    self.params.each do |name,value|
+      if value.class.to_s != 'Hash'
+        #if value.scan(/\w+/).length > 1
+        #  output_stream.puts "#{name} = \"#{value}\""
+        #else
+        output_stream.puts "#{name} = #{value}"
+        #end
+      end
+    end
+    output_stream.puts "\n"
+
+    self.groups.each do |group|
+      output_stream.puts "[#{group}]"
+      self.params[group].each do |param, value|
+        #if value.scan(/\w+/).length > 1
+        #  output_stream.puts "#{param} = \"#{value}\""
+        #else
+        output_stream.puts "#{param} = #{value}"
+        #end
+      end
+      output_stream.puts "\n"
+    end
+  end
 end

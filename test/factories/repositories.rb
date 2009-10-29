@@ -4,5 +4,5 @@ end
 
 Factory.define :repository do |record|
   record.name { Factory.next(:repository_name) }  
-  record.email 'test@namics.com'
+  record.email 'test@namics.com' 
 end
