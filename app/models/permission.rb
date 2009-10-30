@@ -11,15 +11,22 @@ private
   def add_key_to_config
     logger.info("Adding key #{self.public_key.keyfilename} to repository #{self.repository.name}")
     @config ||= GitosisConfig.new
-    @config.add_to_group(self.repository.name, 'members', self.repository.public_key_filenames)
-    @config.save
+    @config.lock do
+      @config.parse
+      @config.add_param_to_section(self.repository.name, 'members', self.repository.public_key_filenames)
+      @config.save
+    end
   end
 
   def remove_key_from_config
     logger.info("Removing key #{self.public_key.keyfilename} from repository #{self.repository.name}")
     @config ||= GitosisConfig.new
-    @config.add_to_group(self.repository.name, 'members', self.repository.public_key_filenames)
-    @config.save
-  end
+    @config.lock do
+      @config.parse
+      @config.add_param_to_section(self.repository.name, 'members', self.repository.public_key_filenames)
+      @config.save
+    end
+  end   
+
 
 end

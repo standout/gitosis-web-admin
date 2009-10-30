@@ -1,58 +1,91 @@
-require 'parse_config'
+class GitosisConfig
 
-class GitosisConfig < ParseConfig
+  attr_accessor :config_file, :structure
 
-  # Initializes the gitosis.conf
   def initialize
-    @configuration_file = File.join(configatron.gitosis_admin_root, configatron.gitosis_config)
-    super(@configuration_file)
+    config_file_path = File.join(configatron.gitosis_admin_root, configatron.gitosis_config)
+    if !File.readable?(config_file_path)
+      raise Errno::EACCES, "#{config_file_path} is not readable"
+    else
+      @config_file_path = config_file_path
+      @locked = false
+      self.parse
+    end
   end
 
-  # Overrides a key / value pair in the specified group
-  def override_group_value(group, param, value)
-    self.instance_eval("@#{group}[\"#{param}\"] = \"#{value}\"")
+  def parse
+    section = nil
+    @structure = {}
+
+    File.open(@config_file_path).each do |line|
+      line.chomp
+      unless (/^\#/.match(line))
+        if line =~ /\s*\[(.*)\]\s*/
+          section = $1
+          @structure[section] = {}
+        end
+        if(/\s*=\s*/.match(line))
+          param, value = line.split(/\s*=\s*/, 2)
+          var_name = "#{param}".chomp.strip
+          value = value.chomp.strip.gsub(/^['"](.*)['"]$/, '\1')
+
+          if section.nil?
+            @structure[var_name] = value
+          else
+            @structure[section][var_name] = value
+          end
+        end
+      end
+    end
   end
 
-  # Adds a new group to the config file
-  def add_group(group_name)
-    self.add(group_name, {})
-    self.groups.push(group_name)    
+  def add_section(section)
+    @structure[section] = {}
   end
 
-  # Removes a group from the config file
-  def remove_group(group_name)  
-    self.groups.delete(group_name)
+  def remove_section(section)
+    @structure.delete(section)
   end
 
-  # Saves gitosis.conf to disk
+  def add_param_to_section(section, param, value)
+    @structure[section][param] = value
+  end
+
+  def output
+    out = []
+    @structure.each do |key, value|
+      if value.is_a?(Hash)
+        # is a section
+        out << "\n[#{key}]\n"
+        value.each do |k, v|
+          # param in section
+          out << "#{k} = #{v}\n"
+        end
+      else
+        # is a param
+        out << "#{key} = #{value}\n"
+      end
+    end
+    out.join()
+  end
+
   def save
-    file = open(@configuration_file, 'w')
-    self.write(file)
-    file.close
+    raise "When saving changes, the file should be locked while parsing, modifying and saving. Use the lock method of this class." unless @locked
+    @config_file.truncate(0)
+    @config_file.puts(self.output)
   end
 
-  def write(output_stream=STDOUT)
-    self.params.each do |name,value|
-      if value.class.to_s != 'Hash'
-        #if value.scan(/\w+/).length > 1
-        #  output_stream.puts "#{name} = \"#{value}\""
-        #else
-        output_stream.puts "#{name} = #{value}"
-        #end
-      end
-    end
-    output_stream.puts "\n"
-
-    self.groups.each do |group|
-      output_stream.puts "[#{group}]"
-      self.params[group].each do |param, value|
-        #if value.scan(/\w+/).length > 1
-        #  output_stream.puts "#{param} = \"#{value}\""
-        #else
-        output_stream.puts "#{param} = #{value}"
-        #end
-      end
-      output_stream.puts "\n"
+  def lock
+    @config_file = File.new(@config_file_path, 'r+')
+    @config_file.flock(File::LOCK_EX)
+    @locked = true
+    begin
+      yield
+    ensure
+      @config_file.flock(File::LOCK_UN)
+      @config_file.close
+      @locked = false
     end
   end
+
 end

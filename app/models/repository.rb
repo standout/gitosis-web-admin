@@ -3,7 +3,7 @@ require 'gitosis_config'
 class Repository < ActiveRecord::Base
 
   has_many :public_keys, :through => :permissions
-  has_many :permissions
+  has_many :permissions, :dependent => :destroy
 
   validates_uniqueness_of :name
   validates_format_of :name, :with => %r{^[a-z]+[0-9a-z_]+$} # repository name may only contain lowercase letters, numbers and underscores
@@ -18,35 +18,46 @@ class Repository < ActiveRecord::Base
 
   def public_key_filenames
     self.public_keys.collect(&:keyfilename).join(' ')
-  end
-
+  end 
+ 
 private
-
-  def save_config
-    if self.new_record?
+ 
+  def save_config 
+    if self.new_record? 
       # add new group
       logger.info("Adding new repository #{self.name}")
-      @config ||= GitosisConfig.new
-      @config.add_group(self.name)
-      @config.add_to_group(self.name, 'writable', self.name)
-      @config.save
+      @config = GitosisConfig.new
+      @config.lock do
+        @config.parse
+        @config.add_section(self.name)
+        @config.add_param_to_section(self.name, 'writable', self.name)
+        @config.save 
+      end
     elsif self.name_changed?
+      # TODO: attach keys to new repo
+      # TODO: prevent user from doing stupid things
       # rename group (delete old, add new)
       logger.info("Removing repository #{self.name_was}")
       logger.info("Adding new repository #{self.name}")
-      @config ||= GitosisConfig.new
-      @config.remove_group(self.name_was)
-      @config.add_group(self.name)
-      @config.add_to_group(self.name, 'writable', self.name)
-      @config.save
+      @config = GitosisConfig.new
+      @config.lock do
+        @config.parse
+        @config.remove_section(self.name_was)
+        @config.add_section(self.name)
+        @config.add_param_to_section(self.name, 'writable', self.name)
+        @config.save
+      end
+    end 
+  end  
+   
+  def remove_from_config  
+    logger.info("Removing repository #{self.name}")   
+    @config = GitosisConfig.new 
+    @config.lock do
+      @config.parse
+      @config.remove_section(self.name)
+      @config.save  
     end
-  end
-
-  def remove_from_config
-    logger.info("Removing repository #{self.name}")
-    @config ||= GitosisConfig.new
-    @config.remove_group(self.name)
-    @config.save
   end
 
 end

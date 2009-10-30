@@ -1,7 +1,7 @@
 class PublicKey < ActiveRecord::Base
 
   has_many :repositories, :through => :permissions
-  has_many :permissions
+  has_many :permissions, :dependent => :destroy
 
   validates_format_of :email, :with => %r{^(?:[_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-zA-Z0-9\-\.]+)*(\.[a-z]{2,4})$}i
   validates_presence_of :description

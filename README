@@ -4,9 +4,8 @@ http://www.masone.ch
 
 Todo
 * Git integration
-* Cleaning up on destroy (files and dependent destroy)
+* Improve deletion processes (destructive)
 
 Advanced features (planned)
 * Send mail notification to repository owner if anything related changes
 * Send mail to key owner if anything related changes
-* Lock config file while editing
