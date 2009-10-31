@@ -3,6 +3,7 @@ require 'test_helper'
 class PublicKeysControllerTest < ActionController::TestCase
 
   def setup
+    stub_git
     create_test_gitosis_config
     @public_key ||= Factory(:public_key)
   end

@@ -29,3 +29,4 @@ config.action_mailer.delivery_method = :test
 
 config.gem 'shoulda'
 config.gem 'factory_girl'
+config.gem 'mocha'

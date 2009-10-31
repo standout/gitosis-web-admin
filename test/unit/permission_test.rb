@@ -2,18 +2,21 @@ require 'test_helper'
 
 class PermissionTest < ActiveSupport::TestCase
 
-  should_belong_to :public_key
-  should_belong_to :repository 
+  def setup
+    create_test_gitosis_config
+    stub_git
+  end
+
+  def teardown
+    delete_test_gitosis_config
+  end
+
+  context "associations" do
+    should_belong_to :public_key
+    should_belong_to :repository
+  end
 
   context "config file" do
-
-    setup do
-      create_test_gitosis_config
-    end
-
-    teardown do
-      delete_test_gitosis_config
-    end
 
     should "include new member after save" do
       repository = Factory.create(:repository, :name => 'project_with_one_key')
@@ -56,6 +59,29 @@ class PermissionTest < ActiveSupport::TestCase
         match = true if line.match(/^members = test2@namics\.com-#{second_public_key.id}\.pub$/)
       end
       assert match
+    end
+  end
+
+  context "gitosis-admin" do
+
+    context "on create" do
+
+      should "push a new config to git" do
+        GitosisAdmin.any_instance.expects(:push_config).twice() # repository and permission
+        Factory.create(:permission)
+      end
+
+    end
+
+    context "on destroy" do
+
+      should "push a new config to git" do
+        GitosisAdmin.any_instance.expects(:push_config).twice() # repository and permission
+        p = Factory.create(:permission)
+        GitosisAdmin.any_instance.expects(:push_config) # destroy
+        p.destroy
+      end
+
     end
   end
 

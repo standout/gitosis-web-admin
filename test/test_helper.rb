@@ -50,3 +50,16 @@ def delete_test_gitosis_config
   # delete test config file
   File.delete(gitosis_test_config)
 end
+
+def mock_git
+  git = mock('git')
+  git.expects(:config)
+  Git.expects(:open).returns(git)
+  return git
+end
+
+def stub_git
+  git = stub('git', :pull => true, :add => true, :commit => true, :push => true, :config => true, :remove => true)
+  Git.stubs(:open).returns(git)
+  return git
+end

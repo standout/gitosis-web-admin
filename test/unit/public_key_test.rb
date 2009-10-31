@@ -3,6 +3,7 @@ require 'test_helper'
 class PublicKeyTest < ActiveSupport::TestCase
 
   def setup
+    stub_git
     create_test_gitosis_config
   end
 
@@ -34,21 +35,43 @@ class PublicKeyTest < ActiveSupport::TestCase
     should_validate_uniqueness_of :source
   end
 
-  should "persist key in file on save" do
-    pk = Factory.create(:public_key)
-    match = nil
-    File.open(pk.keyfile).each do |line|
-      match = true if line.strip == pk.source.strip
-    end
-    assert match
-  end
+  context "config file" do
 
-  # should remove key file on destroy
-  should_raise(Errno::ENOENT) do
-    pk = Factory.create(:public_key)
-    keyfile = pk.keyfile
-    pk.destroy
-    File.open(keyfile)
+    should "persist key in file on save" do
+      pk = Factory.create(:public_key)
+      match = nil
+      File.open(pk.keyfile).each do |line|
+        match = true if line.strip == pk.source.strip
+      end
+      assert match
+    end
+
+    # should remove key file on destroy
+#    should_raise(Errno::ENOENT) do
+#      pk = Factory.create(:public_key)
+#      keyfile = pk.keyfile
+#      pk.destroy
+#      File.open(keyfile)
+#    end
+  end
+  
+  context "gitosis-admin" do
+
+    context "on create" do
+      should "push key" do
+        GitosisAdmin.any_instance.expects(:push_key)
+        Factory.create(:public_key)
+      end
+    end
+
+    context "on destroy" do
+      should "remove key" do
+        pk = Factory.create(:public_key)
+
+        GitosisAdmin.any_instance.expects(:remove_key)
+        pk.destroy
+      end
+    end
   end
 
 

@@ -9,8 +9,8 @@ class PublicKey < ActiveRecord::Base
   validates_format_of :source, :with => %r{^(-+\s?BEGIN \w*\s*PUBLIC|ssh-rsa )}i, :allow_blank => true, :allow_nil => true # accept keys beginning with 'ssh-rsa' or something like 'BEGIN PUBLIC KEY' 
   validates_uniqueness_of :source
 
-  after_save :persist_publickey
-  after_destroy :delete_publickey
+  after_save :persist_publickey, :add_to_git
+  after_destroy :delete_publickey, :remove_from_git
 
   def keyfile
     File.join(configatron.gitosis_admin_root, configatron.gitosis_keydir, self.keyfilename)
@@ -26,6 +26,7 @@ class PublicKey < ActiveRecord::Base
 
 private   
 
+  # TODO: handle update (rename key)
   def persist_publickey
     logger.info("Saving key #{self.keyfilename} to disk")
     File.open(keyfile, 'w') do |file|
@@ -36,6 +37,18 @@ private
   def delete_publickey
     logger.info("Deleting key #{self.keyfilename} from disk")        
     File.delete(keyfile)
+  end
+
+  def add_to_git
+    logger.info("Push key to git")
+    git = GitosisAdmin.new
+    git.push_key(self.keyfilename, "Added new key #{self.keyfilename}")
+  end
+
+  def remove_from_git
+    logger.info("Remove key from git")
+    git = GitosisAdmin.new
+    git.remove_key(self.keyfilename, "Removed key #{self.keyfilename}")
   end
 
 end

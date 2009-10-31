@@ -2,7 +2,8 @@ require 'test_helper'
 
 class RepositoriesControllerTest < ActionController::TestCase
 
-  def setup  
+  def setup
+    stub_git
     create_test_gitosis_config
     @repository ||= Factory(:repository)  
   end

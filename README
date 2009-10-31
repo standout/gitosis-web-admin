@@ -5,7 +5,12 @@ http://www.masone.ch
 Todo
 * Git integration
 * Improve deletion processes (destructive)
+* serve public key from app
 
 Advanced features (planned)
 * Send mail notification to repository owner if anything related changes
 * Send mail to key owner if anything related changes
+
+
+Notes
+* Config and database are loosely coupled. Config is regenerated from database all the time. Manual changes in the config will be lost.
