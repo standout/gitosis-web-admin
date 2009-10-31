@@ -41,5 +41,5 @@ class GitosisAdminTest < Test::Unit::TestCase
     @git = GitosisAdmin.new
     @git.remove_key('key', 'message')
   end
-
+ 
 end

@@ -79,8 +79,8 @@ class RepositoryTest < ActiveSupport::TestCase
     context "on update" do
       setup do
         Factory.create(:repository, :name => 'test_repo1')
-        r = Factory.create(:repository, :name => 'test_repo2')
-        r.update_attributes(:name => 'renamed_test_repo')
+        @r = Factory.create(:repository, :name => 'test_repo2')
+        @r.update_attributes(:name => 'renamed_test_repo')
       end
 
       should "still include untouched repository" do
@@ -122,6 +122,19 @@ class RepositoryTest < ActiveSupport::TestCase
         end
         assert_equal match, nil
       end
+
+      should "readd members for renamed repository" do
+        public_key = Factory.create(:public_key)
+        @r.public_keys << public_key
+        @r.update_attributes(:name => 'new_name_of_repo')
+
+        match = nil
+        File.open(gitosis_test_config).each do |line|
+          match = true if line.match(/^members = #{public_key.keyfilename}$/)
+        end
+        assert match
+      end
+      
     end
 
     context "on destroy" do

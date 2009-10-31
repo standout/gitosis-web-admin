@@ -3,13 +3,12 @@ class Permission < ActiveRecord::Base
   belongs_to :repository
   belongs_to :public_key
 
-  after_save :add_key_to_config, :add_to_git
+  after_create :add_key_to_config, :add_to_git
   after_destroy :remove_key_from_config, :remove_from_git
 
 private  
 
   def add_key_to_config
-    # TODO: handle update ?
     logger.info("Adding key #{self.public_key.keyfilename} to repository #{self.repository.name}")
     config = GitosisConfig.new
     config.lock do

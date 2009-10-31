@@ -47,17 +47,24 @@ class PublicKeyTest < ActiveSupport::TestCase
     end
 
     # should remove key file on destroy
-#    should_raise(Errno::ENOENT) do
-#      pk = Factory.create(:public_key)
-#      keyfile = pk.keyfile
-#      pk.destroy
-#      File.open(keyfile)
-#    end
+    should_raise(Errno::ENOENT) do
+      pk = Factory.create(:public_key)
+      keyfile = pk.keyfile
+      pk.destroy
+      File.open(keyfile)
+    end
   end
   
   context "gitosis-admin" do
 
     context "on create" do
+      should "push key" do
+        GitosisAdmin.any_instance.expects(:push_key)
+        Factory.create(:public_key)
+      end
+    end
+
+    context "on update" do
       should "push key" do
         GitosisAdmin.any_instance.expects(:push_key)
         Factory.create(:public_key)

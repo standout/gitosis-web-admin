@@ -17,7 +17,7 @@ class PublicKey < ActiveRecord::Base
   end
 
   def keyfilename
-    "#{self.email}-#{self.id}.pub"
+    "#{self.id}.pub"
   end
 
   def label
@@ -26,7 +26,6 @@ class PublicKey < ActiveRecord::Base
 
 private   
 
-  # TODO: handle update (rename key)
   def persist_publickey
     logger.info("Saving key #{self.keyfilename} to disk")
     File.open(keyfile, 'w') do |file|

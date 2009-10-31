@@ -24,14 +24,14 @@ class PublicKeysController < ApplicationController
 
     if @repository
       if @public_key.save && @repository.public_keys << @public_key
-        flash[:notice] = 'PublicKey was successfully created.'
+        flash[:notice] = 'Public key was successfully created and added to repository.'
         redirect_to(@repository)
       else
         render :action => "new"
       end
     else
       if @public_key.save
-        flash[:notice] = 'PublicKey was successfully created.'
+        flash[:notice] = 'Public key was successfully created.'
         redirect_to(@public_key)
       else
         render :action => "new"
@@ -44,7 +44,7 @@ class PublicKeysController < ApplicationController
     @public_key = PublicKey.find(params[:id])
 
     if @public_key.update_attributes(params[:public_key])
-      flash[:notice] = 'PublicKey was successfully updated.'
+      flash[:notice] = 'Public key was successfully updated.'
       redirect_to(@public_key)
     else
       render :action => "edit"

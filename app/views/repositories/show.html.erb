@@ -35,6 +35,6 @@
     <%= link_to '+ Add public key', new_repository_public_key_url(@repository), :class => 'button' %>
   </p>
 
-  <%= link_to 'Edit', edit_repository_path(@repository) %> |
-  <%= link_to 'Destroy', @repository, :confirm => 'Are you sure?', :method => :delete %>
+  <%= link_to 'Edit',   edit_repository_path(@repository) %> |
+  <%= link_to 'Destroy', @repository, :confirm =>  "You will need to do manual changes on the server. \n\nDo you really want to proceed?", :method => :delete %>
 </div>

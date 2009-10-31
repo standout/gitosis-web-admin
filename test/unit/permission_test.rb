@@ -25,7 +25,7 @@ class PermissionTest < ActiveSupport::TestCase
 
       match = nil
       File.open(gitosis_test_config).each do |line|
-        match = true if line.match(/^members = test@namics\.com-#{public_key.id}\.pub$/)
+        match = true if line.match(/^members = #{public_key.keyfilename}/)
       end
       assert match
     end
@@ -40,7 +40,7 @@ class PermissionTest < ActiveSupport::TestCase
 
       match = nil
       File.open(gitosis_test_config).each do |line|
-        match = true if line.match(/^members = test1@namics\.com-#{first_public_key.id}\.pub test2@namics\.com-#{second_public_key.id}\.pub$/)
+        match = true if line.match(/^members = #{first_public_key.keyfilename} #{second_public_key.keyfilename}$/)
       end
       assert match
     end
@@ -56,7 +56,7 @@ class PermissionTest < ActiveSupport::TestCase
 
       match = nil
       File.open(gitosis_test_config).each do |line|
-        match = true if line.match(/^members = test2@namics\.com-#{second_public_key.id}\.pub$/)
+        match = true if line.match(/^members = #{second_public_key.keyfilename}$/)
       end
       assert match
     end
