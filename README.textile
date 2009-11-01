@@ -23,7 +23,7 @@ h3. Install the rails app
 
 h3. Configuration
 
-Edit the configuration located at config/application.example.yml and save it as config/application.yml
+Edit the database configuration at config/database.yml and the application configuration located at config/application.example.yml and save it as config/application.yml
 
 h3. Import data
 
