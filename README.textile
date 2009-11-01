@@ -15,11 +15,16 @@ h2. Installation
 
 h3. Install the rails app
 
-@git clone git://github.com/masone/gitosis-web-admin.git@
-@cd gitosis-web-admin@
-@rake gems:install@
-@rake db:create@
-@rake db:migrate@
+<pre>
+<code>
+git clone git://github.com/masone/gitosis-web-admin.git
+cd gitosis-web-admin
+rake gems:install
+rake db:create
+rake db:migrate
+</code>
+</pre>
+
 
 h3. Configuration
 
@@ -29,21 +34,34 @@ h3. Import data
 
 If you're not working on a clean installation of gitosis, you can import the current repositories and keys with rake.
 
-@rake gitosis:import@
+<pre>
+<code>
+rake gitosis:import
+</code>
+</pre>
+
 
 h3. SSH key
 
 Create a ssh key for the user that runs the application and give it access to gitosis-admin.
 Do not set a password (otherwise it won't work).
 
-@su application_user@
-@ssh-keygen -t rsa@
-@sudo -H -u git gitosis-init < ~/.ssh/id_rsa.pub@
+<pre>
+<code>
+su application_user
+ssh-keygen -t rsa
+sudo -H -u git gitosis-init < ~/.ssh/id_rsa.pub
+</code>
+</pre>
 
 
 h3. Ready to go
 
-@script/server@
+<pre>
+<code>
+script/server
+</pre>
+</code>
 
 
 
