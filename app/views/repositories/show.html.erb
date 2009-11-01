@@ -18,7 +18,7 @@
         <li>
           <% form_tag remove_public_key_repository_path(@repository), :method => :put do %>
             <p>
-              <%= link_to h(pk.label), pk %>
+              <%= link_to h(pk.short_description), pk %> <br /><%= h pk.email %>
               <%= hidden_field_tag :public_key_id, pk.id %>
               <%= submit_tag 'remove' %>
             </p>

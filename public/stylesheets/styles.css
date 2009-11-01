@@ -41,6 +41,7 @@ a.button:hover{
 h1{ font-weight:bold; font-size:18px; color:#222; margin-bottom:0.8em; }
 h2{ font-weight:bold; font-size:16px; color:#222; margin-bottom:0.5em; }
 h2{ font-weight:bold; color:#222; }
+pre{ font-family: Monaco, 'sans-serif'; margin-bottom:1.5em; font-size:0.8em; }
 #flash_notice{
   background:#efefef;
   padding:0.5em 1em;
@@ -82,6 +83,9 @@ h2{ font-weight:bold; color:#222; }
   list-style-type:disc;
   padding-left:1.2em;
   margin-bottom:1.2em;
+}
+#content ul li{
+  margin-bottom:0.5em;
 }
 #content p{
   margin-bottom:1.2em;

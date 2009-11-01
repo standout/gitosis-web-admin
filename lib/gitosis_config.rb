@@ -21,7 +21,7 @@ class GitosisConfig
       line.chomp
       if (!/^\#/.match(line)) && !/^\[gitosis\]$/.match(line)
         
-        if line =~ /\s*\[(.*)\]\s*/
+        if line =~ /\s*\[group (.*)\]\s*/
           section = $1
           @structure[section] = {}
         end
@@ -60,7 +60,7 @@ class GitosisConfig
     @structure.each do |key, value|
       if value.is_a?(Hash)
         # is a section
-        out << "\n[#{key}]\n"
+        out << "\n[group #{key}]\n"
         value.each do |k, v|
           # param in section
           out << "#{k} = #{v}\n"

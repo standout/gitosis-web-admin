@@ -12,17 +12,26 @@ class PublicKey < ActiveRecord::Base
   after_save :persist_publickey, :add_to_git
   after_destroy :delete_publickey, :remove_from_git
 
+  def to_param
+    self.id.to_s
+  end
+
+  def short_description(max = 60)
+    if self.description.length > max
+      description = self.description[0..max] + " ..."
+    else
+      description = self.description
+    end
+    description
+  end
+
   def keyfile
     File.join(configatron.gitosis_admin_root, configatron.gitosis_keydir, self.keyfilename)
   end
 
   def keyfilename
-    "#{self.id}.pub"
+    "#{self.to_param}.pub"
   end
-
-  def label
-    [self.description, self.email].join(', ')
-  end 
 
 private   
 
@@ -39,9 +48,11 @@ private
   end
 
   def add_to_git
-    logger.info("Push key to git")
-    git = GitosisAdmin.new
-    git.push_key(self.keyfilename, "Added new key #{self.keyfilename}")
+    if self.new_record? || self.source_changed?
+      logger.info("Push key to git")
+      git = GitosisAdmin.new
+      git.push_key(self.keyfilename, "Added new key #{self.keyfilename}")
+    end
   end
 
   def remove_from_git

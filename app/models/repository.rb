@@ -6,7 +6,7 @@ class Repository < ActiveRecord::Base
   has_many :permissions, :dependent => :destroy
 
   validates_uniqueness_of :name
-  validates_format_of :name, :with => %r{^[a-z]+[0-9a-z_]+$} # repository name may only contain lowercase letters, numbers and underscores
+  validates_format_of :name, :with => %r{^[a-z]+[0-9a-z_-]+$} # repository name may only contain lowercase letters, numbers, dashes and underscores
   validates_format_of :email, :with => %r{^(?:[_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-zA-Z0-9\-\.]+)*(\.[a-z]{2,4})$}i 
 
   after_create :save_config, :add_to_git
@@ -18,7 +18,7 @@ class Repository < ActiveRecord::Base
   end
 
   def public_key_filenames
-    self.public_keys.collect(&:keyfilename).join(' ')
+    self.public_keys.collect(&:to_param).join(' ')
   end 
  
 private

@@ -23,8 +23,8 @@ class RepositoryTest < ActiveSupport::TestCase
       Factory(:repository)
     end
 
-    should_allow_values_for :name, 'valid_repository', 'validrepository', 'validrepository_3'
-    should_not_allow_values_for :name, 'InValidRepository', 'invalid repository', 'invalid-repository', '123numbersfirst', nil
+    should_allow_values_for :name, 'valid_repository', 'valid-repository', 'validrepository_3'
+    should_not_allow_values_for :name, 'InValidRepository', 'invalid repository', '123numbersfirst', nil
     should_allow_values_for :email, 'test123@namics.com', 'my.email-is@gmail.com'
     should_not_allow_values_for :email, 'test123.namics.com', 'my.email@gmail .com', '', nil
     should_validate_uniqueness_of :name
@@ -50,13 +50,13 @@ class RepositoryTest < ActiveSupport::TestCase
       should "include new group after save" do
         match = nil
         File.open(gitosis_test_config).each do |line|
-          match = true if line.match(/^\[test_repo1\]$/)
+          match = true if line.match(/^\[group test_repo1\]$/)
         end
         assert match
 
         match = nil
         File.open(gitosis_test_config).each do |line|
-          match = true if line.match(/^\[test_repo2\]$/)
+          match = true if line.match(/^\[group test_repo2\]$/)
         end
         assert match
       end
@@ -86,7 +86,7 @@ class RepositoryTest < ActiveSupport::TestCase
       should "still include untouched repository" do
         match = nil
         File.open(gitosis_test_config).each do |line|
-          match = true if line.match(/^\[test_repo1\]$/)
+          match = true if line.match(/^\[group test_repo1\]$/)
         end
         assert match
       end
@@ -94,7 +94,7 @@ class RepositoryTest < ActiveSupport::TestCase
       should "include new group after updating name" do
         match = nil
         File.open(gitosis_test_config).each do |line|
-          match = true if line.match(/^\[renamed_test_repo\]$/)
+          match = true if line.match(/^\[group renamed_test_repo\]$/)
         end
         assert match
       end
@@ -130,7 +130,7 @@ class RepositoryTest < ActiveSupport::TestCase
 
         match = nil
         File.open(gitosis_test_config).each do |line|
-          match = true if line.match(/^members = #{public_key.keyfilename}$/)
+          match = true if line.match(/^members = #{public_key.to_param}$/)
         end
         assert match
       end
@@ -148,7 +148,7 @@ class RepositoryTest < ActiveSupport::TestCase
       should "still include existing group" do
         match = nil
         File.open(gitosis_test_config).each do |line|
-          match = true if line.match(/^\[existing_test_repo\]$/)
+          match = true if line.match(/^\[group existing_test_repo\]$/)
         end
         assert_equal match, true
       end
@@ -156,7 +156,7 @@ class RepositoryTest < ActiveSupport::TestCase
       should "no longer include deleted group" do
         match = nil
         File.open(gitosis_test_config).each do |line|
-          match = true if line.match(/^\[deleting_test_repo\]$/)
+          match = true if line.match(/^\[group deleting_test_repo\]$/)
         end
 
         assert_equal match, nil

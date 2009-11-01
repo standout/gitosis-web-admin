@@ -5,7 +5,8 @@
     <ul>
     <% @public_keys.each do |public_key| %>
       <li>
-        <%= link_to h(public_key.label), public_key %>
+        <%= link_to h(public_key.short_description) , :title => h(public_key.description) %><br />
+        <%= h public_key.email %>
       </li>
     <% end %>
     </ul>

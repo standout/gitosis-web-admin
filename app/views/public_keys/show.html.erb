@@ -14,8 +14,9 @@
   <p>
     <b>Key:</b><br />
     <%=h @public_key.keyfilename %><br />
-    <%=h @public_key.source %>
   </p>
+  <pre><%=h @public_key.source %></pre>
+
 
   <% unless @repositories.blank? %>
     <h2>Repositories this key has access to</h2>

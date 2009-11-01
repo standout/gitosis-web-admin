@@ -1,20 +1,21 @@
 # Settings that are the same for each environment
 global: &global
-
+  gitosis_admin_root: /path/to/gitosis_admin_working_copy   # Absolute path to your gitosis admin working copy
+  remote_git_repository: git@yourhost.com                   # Where your repositories are hosted
+  gitosis_config: gitosis.conf                              # You don't need to change this
+  gitosis_keydir: keydir                                    # You don't need to change this
 
 # Environment specific variables.
 # Just override global settings as needed.
 development:
   <<: *global
 
-
-staging:
-  <<: *global
-
-
-test:
-  <<: *global
-
-
 production:
   <<: *global
+
+# Use tmp files during tests
+test:
+  <<: *global
+  gitosis_admin_root: <%= RAILS_ROOT+"/tmp/" %>
+  gitosis_config: 'gitosis.conf.test'
+  gitosis_keydir: 'keydir.test'
