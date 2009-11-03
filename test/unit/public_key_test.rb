@@ -63,14 +63,7 @@ class PublicKeyTest < ActiveSupport::TestCase
         Factory.create(:public_key)
       end
     end
-
-    context "on update" do
-      should "push key" do
-        GitosisAdmin.any_instance.expects(:push_key)
-        Factory.create(:public_key)
-      end
-    end
-
+    
     context "on destroy" do
       should "remove key" do
         pk = Factory.create(:public_key)

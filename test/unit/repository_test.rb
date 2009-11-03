@@ -130,7 +130,7 @@ class RepositoryTest < ActiveSupport::TestCase
 
         match = nil
         File.open(gitosis_test_config).each do |line|
-          match = true if line.match(/^members = #{public_key.to_param}$/)
+          match = true if line.match(/^members = publickey-#{public_key.id}$/)
         end
         assert match
       end

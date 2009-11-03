@@ -19,9 +19,7 @@ namespace :gitosis do
 
       puts "\nE-Mail address that will be associated with the data"
       puts "-" * 50
-      # TODO
-      #owner = STDIN.gets.chomp
-      owner = 'asdf@asdf.ch' 
+      owner = STDIN.gets.chomp
 
       puts "\nMigrating config"
       puts "-" * 50
@@ -70,11 +68,10 @@ namespace :gitosis do
               puts "-" * 20
             end
           end
+
+          r.reload
+          config.add_param_to_section(r.name, 'members', r.public_key_filenames)
         end
-      
-        r.reload
-        config.add_param_to_section(r.name, 'members', r.public_key_filenames)
-      
       end
 
       # Update configuration file

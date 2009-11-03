@@ -19,7 +19,14 @@ h3. Install the rails app
 <code>
 git clone git://github.com/masone/gitosis-web-admin.git
 cd gitosis-web-admin
-rake gems:install
+</code>
+</pre>
+
+Edit the configuration located at config/database.example.yml and save it as config/database.yml
+
+<pre>
+<code>
+sudo rake gems:install
 rake db:create
 rake db:migrate
 </code>
@@ -28,7 +35,7 @@ rake db:migrate
 
 h3. Configuration
 
-Edit the database configuration at config/database.yml and the application configuration located at config/application.example.yml and save it as config/application.yml
+Edit the configuration located at config/application.example.yml and save it as config/application.yml
 
 h3. Import data
 
@@ -75,6 +82,8 @@ h2. Planned features
 
 * Send mail notification to repository owner if anything related changes
 * Send mail to key owner if anything related changes
+* Links to a gitweb client
+* Supporting more git config tags
 
 h2. Notes
 

@@ -30,10 +30,10 @@ class PublicKey < ActiveRecord::Base
   end
 
   def keyfilename
-    "#{self.to_param}.pub"
+    "publickey-#{self.to_param}.pub"
   end
 
-private   
+private
 
   def persist_publickey
     logger.info("Saving key #{self.keyfilename} to disk")
