@@ -27,7 +27,7 @@ class RepositoriesControllerTest < ActionController::TestCase
     assert_difference('Repository.count') do
       post :create, :repository => Factory.attributes_for(:repository)
     end
-    assert_redirected_to repository_path(assigns(:repository))
+    assert_redirected_to new_repository_public_key_path(assigns(:repository))
   end
 
   should "show repository" do

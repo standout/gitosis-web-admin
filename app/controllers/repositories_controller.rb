@@ -24,7 +24,7 @@ class RepositoriesController < ApplicationController
 
     if @repository.save
       flash[:notice] = 'Repository was successfully created.'
-      redirect_to(@repository)
+      redirect_to(new_repository_public_key_path(@repository))
     else
       render :action => "new"
     end
