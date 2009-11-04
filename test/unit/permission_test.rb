@@ -71,6 +71,26 @@ class PermissionTest < ActiveSupport::TestCase
         Factory.create(:permission)
       end
 
+      should "initialize repository if repository has no commit yet" do
+        GitosisAdmin.any_instance.expects(:push_config).twice() # repository and permission
+        mg = mock('git')
+        Git.expects(:init).returns(mg)
+        mg.expects(:log).returns([])
+        mg.expects(:add_remote)
+        mg.expects(:add)
+        mg.expects(:commit_all)
+        mg.expects(:push)
+        Factory.create(:permission)
+      end
+
+      should "initialize repository if repository already has commits" do
+        GitosisAdmin.any_instance.expects(:push_config).twice() # repository and permission
+        mg = mock('git')
+        Git.expects(:init).returns(mg)
+        mg.expects(:log).returns(mock('Git::Log'))
+        Factory.create(:permission)
+      end
+
     end
 
     context "on destroy" do
